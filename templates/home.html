@@ -50,5 +50,53 @@
   </div>
 </div>
 
+<div class="container">
+  <h2>Projects</h2>
+  <p>The following is the tabular representation of the projects done</p>        
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>    
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Project Name</th>
+        <th>Time</th>
+        <th>Technology</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td>Project 1</td>
+        <td>May 2020</td>
+        <td>description 1</td>
+      </tr>
+      <tr>
+        <td>Project 2</td>
+        <td>June 2021</td>
+        <td>description 2</td>
+      </tr>
+      <tr>
+        <td>Project 3</td>
+        <td>November 2022</td>
+        <td>description 3</td>
+      </tr>
+      <tr>
+        <td>Project 4</td>
+        <td>November 2022</td>
+        <td>description 4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
 </body>
 </html>
