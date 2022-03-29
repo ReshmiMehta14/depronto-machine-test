@@ -8,6 +8,33 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
     * {
       box-sizing: border-box;
     }
@@ -20,6 +47,7 @@
       border-radius: 4px;
       resize: vertical;
     }
+    
     
     label {
       padding: 12px 12px 12px 0;
@@ -80,8 +108,12 @@
     </style>
 </head>
 <body>
-
-  <h2>Introduction</h2>
+  <ul>
+    <li><a href="#caro">Slideshow</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#feedbackform">feedback form</a></li>
+    <li><a href="#fetch">fetch</a></li>
+  </ul>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -91,7 +123,7 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" id="caro">
       <div class="item active">
          <img src="{{ url_for('static',filename='img/1.png') }}" alt="" style="width:100%; height:50%" >
          <div class="carousel-caption">
@@ -120,7 +152,7 @@
 </div>
 
 <br><br>
-<div class="container-project">
+<div class="container-project" id="projects">
   <h2>Projects</h2>
   <p>The following is the tabular representation of the projects done</p>        
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
@@ -158,7 +190,7 @@
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="feedbackform">
   <h2>Feedback form</h2>
   <form>
       <form action="POST">
@@ -219,7 +251,7 @@
   </form>
 </div>
 
-<div>
+<div id="fetch">
   <h1>fetch data from blog</h1>
   <button id="fetchUserDataBtn">Fetch data</button>
 </div>
